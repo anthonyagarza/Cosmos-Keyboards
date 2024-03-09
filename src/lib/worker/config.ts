@@ -15,6 +15,7 @@ import {
   type Cuttleform_OrbylThumb,
   ENCODER,
   EXTRA_COLUMN,
+  JOYSTICK,
   KEY_SIZE,
   KEYCAP,
   LAST_ROW,
@@ -170,7 +171,11 @@ interface CuttleTrackpadKey extends CuttleBaseKey {
   size: { sides: number }
 }
 
-export type CuttleKey = CuttleKeycapKey | CuttleBasicKey | CuttleTrackballKey | CuttleTrackpadKey | CuttleBlankKey
+interface CuttleJoystickKey extends CuttleBaseKey {
+  type: 'ps2' | 'joycon'
+}
+
+export type CuttleKey = CuttleKeycapKey | CuttleBasicKey | CuttleTrackballKey | CuttleTrackpadKey | CuttleBlankKey | CuttleJoystickKey
 
 export function keyRoundSize(key: CuttleKey): RoundSize | undefined {
   switch (key.type) {
@@ -242,6 +247,11 @@ export const MAP_CONNECTOR_SIZE: Record<CONNECTOR_SIZE, Cuttleform['connectorSiz
   [CONNECTOR_SIZE.SLIM]: 'slim',
   [CONNECTOR_SIZE.AVERAGE]: 'average',
   [CONNECTOR_SIZE.BIG]: 'big',
+}
+
+export const MAP_JOYSTICK: Record<JOYSTICK, 'ps2' | 'joycon'> = {
+  [JOYSTICK.PS2]: 'ps2',
+  [JOYSTICK.JOYCON]: 'joycon',
 }
 
 export function cScrewHeight(size: string) {
@@ -453,7 +463,7 @@ function switchType(c: DeepRequired<CuttleformProto>): Required<CuttleKeycapKey>
   if (c.upperKeys.switchType == SWITCH.MX_PCB) return 'mx-pcb'
   if (c.upperKeys.switchType == SWITCH.CHOC) return 'choc'
   if (c.upperKeys.switchType == SWITCH.ALPS) return 'alps'
-  return 'box'
+  return 'old-box'
 }
 
 export function curvature(pinky: boolean, c: DeepRequired<CuttleformProto>) {

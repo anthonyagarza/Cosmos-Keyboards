@@ -30,6 +30,8 @@ export const KEY_URLS: Record<CuttleKey['type'], string> = {
   'cirque-35mm': '/src/assets/key-cirque-35mm.step',
   'cirque-40mm': '/src/assets/key-cirque-40mm.step',
   'blank': '',
+  'ps2': '/src/assets/key-ps2-joystick.step',
+  'joycon': '/src/assets/key-joycon-thomas.step',
 }
 
 const keyCacher = makeAsyncCacher(async (key: CuttleKey) => {

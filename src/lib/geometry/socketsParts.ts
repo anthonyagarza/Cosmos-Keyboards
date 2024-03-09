@@ -22,6 +22,8 @@ export const PART_NAMES: Record<CuttleKey['type'], string> = {
   'cirque-23mm': 'Cirque 23 mm Flat Circle Trackpads',
   'cirque-35mm': 'Cirque 35 mm Flat Circle Trackpads',
   'cirque-40mm': 'Cirque 40 mm Flat Circle Trackpads',
+  'ps2': 'Arduino Joystick',
+  'joycon': 'Joycon Thumbstick',
 }
 
 export function socketSize(key: CuttleKey): Vector {
@@ -36,6 +38,7 @@ export function socketSize(key: CuttleKey): Vector {
   if (key.type == 'oled-128x32-0.91in-dfrobot') return new Vector(11.6, 41.18, 2.84)
   if (key.type == 'alps') return new Vector(18.6, 17, 5)
   if (key.type.startsWith('cirque')) return new Vector(0, 0, 3)
+  if (key.type == 'joycon') return new Vector(23.8, 25.2, 4)
   return new Vector(18, 18, 5)
 }
 
@@ -67,6 +70,12 @@ export function partBottom(sw: CuttleKey['type'] | undefined): [number, number, 
   }
   if (sw == 'oled-128x32-0.91in-dfrobot') {
     return [box(11.5, 24.4, 4.3)]
+  }
+  if (sw == 'ps2') {
+    return [box(34, 27, 12)]
+  }
+  if (sw == 'joycon') {
+    return [box(17, 18.96, 3)]
   }
   return [box(10, 10, 2)]
 }
