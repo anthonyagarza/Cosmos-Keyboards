@@ -784,7 +784,7 @@
       {/if}
     </div>
   </div>
-  <div class="xs:w-80 md:w-[32rem]">
+  <div class="flex-1">
     {#if viewer == 'programming'}
       <button class="infobutton" on:click={() => (kleView = true)}>Download KLE Layout</button>
       <p class="mt-4 mb-2">Some things that will happen here in the future:</p>

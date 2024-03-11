@@ -142,4 +142,4 @@
     make sure there's nothing malicious. Then, make any change (like adding a space) to run it.
   </p>
 {/if}
-<div bind:this={element} class="h-[30rem] w-[32rem]" />
+<div bind:this={element} class="h-full w-full" />

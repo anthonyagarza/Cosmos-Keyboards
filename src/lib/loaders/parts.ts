@@ -28,7 +28,7 @@ const PART_URLS: Record<Switch, string | null> = {
   'trackball': null,
   'blank': null,
   'ps2': '/src/assets/ps2-joystick.glb',
-  'joycon': '/src/assets/switch-joycon-90.glb',
+  'joycon': '/src/assets/switch-joycon.glb',
 }
 
 type Switch = CuttleKey['type']

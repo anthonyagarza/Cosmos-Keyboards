@@ -38,7 +38,8 @@ export function socketSize(key: CuttleKey): Vector {
   if (key.type == 'oled-128x32-0.91in-dfrobot') return new Vector(11.6, 41.18, 2.84)
   if (key.type == 'alps') return new Vector(18.6, 17, 5)
   if (key.type.startsWith('cirque')) return new Vector(0, 0, 3)
-  if (key.type == 'joycon') return new Vector(23.8, 25.2, 4)
+  if (key.type == 'joycon') return new Vector(24, 25, 5)
+  if (key.type == 'ps2') return new Vector(40, 38, 14.5)
   return new Vector(18, 18, 5)
 }
 
@@ -72,10 +73,10 @@ export function partBottom(sw: CuttleKey['type'] | undefined): [number, number, 
     return [box(11.5, 24.4, 4.3)]
   }
   if (sw == 'ps2') {
-    return [box(34, 27, 12)]
+    return [box(34, 27, 16)]
   }
   if (sw == 'joycon') {
-    return [box(17, 18.96, 3)]
+    return [box(17, 19, 5)]
   }
   return [box(10, 10, 2)]
 }
