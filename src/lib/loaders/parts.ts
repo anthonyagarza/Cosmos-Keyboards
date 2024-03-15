@@ -27,7 +27,7 @@ const PART_URLS: Record<Switch, string | null> = {
   'oled-128x32-0.91in-adafruit': null,
   'trackball': null,
   'blank': null,
-  'ps2': '/src/assets/ps2-joystick.glb',
+  'ps2': '/src/assets/switch-ps2.glb',
   'joycon': '/src/assets/switch-joycon.glb',
 }
 

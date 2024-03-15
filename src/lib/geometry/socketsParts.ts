@@ -39,7 +39,7 @@ export function socketSize(key: CuttleKey): Vector {
   if (key.type == 'alps') return new Vector(18.6, 17, 5)
   if (key.type.startsWith('cirque')) return new Vector(0, 0, 3)
   if (key.type == 'joycon') return new Vector(24, 25, 5)
-  if (key.type == 'ps2') return new Vector(40, 38, 14.5)
+  if (key.type == 'ps2') return new Vector(35, 28.5, 15.01)
   return new Vector(18, 18, 5)
 }
 
@@ -73,7 +73,7 @@ export function partBottom(sw: CuttleKey['type'] | undefined): [number, number, 
     return [box(11.5, 24.4, 4.3)]
   }
   if (sw == 'ps2') {
-    return [box(34, 27, 16)]
+    return [box(34, 26, 16.61)]
   }
   if (sw == 'joycon') {
     return [box(17, 19, 5)]
